@@ -13,7 +13,7 @@ try {
 		'dbhost' => 'localhost',
 		'dbname' => 'ct275_lab4',
 		'dbuser' => 'root',
-		'dbpass' => '632521410Kh@ng'
+		'dbpass' => 'root'
 	]);
 }
 catch (Exception $ex) {
