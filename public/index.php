@@ -22,5 +22,7 @@ $router->post('/login', '\App\Controllers\Auth\LoginController@store');
 // Contact routes
 $router->get('/', '\App\Controllers\HomeController@index');
 $router->get('/home', '\App\Controllers\HomeController@index');
+$router->get('/detail', '\App\Controllers\DetailController@detail');
+$router->get('/product', '\App\Controllers\ProductController@product');
 
 $router->run();
