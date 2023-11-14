@@ -1,24 +1,23 @@
 <?php
 
-require_once __DIR__ . '/src/helpers.php';
-require_once __DIR__ . '/libraries/Psr4AutoloaderClass.php';
+define('ROOTDIR', __DIR__ . DIRECTORY_SEPARATOR);
 
-$loader = new Psr4AutoloaderClass;
-$loader->register();
+require_once ROOTDIR . 'vendor/autoload.php';
 
-$loader->addNamespace('CT275\Labs', __DIR__ . '/src');
+$dotenv = Dotenv\Dotenv::createImmutable(ROOTDIR);
+$dotenv->load();
 
-try {
-	$PDO = (new CT275\Labs\PDOFactory())->create([
-		'dbhost' => 'localhost',
-		'dbname' => 'ct275_lab4',
-		'dbuser' => 'root',
-		'dbpass' => 'root'
-	]);
-}
-catch (Exception $ex) {
-	echo 'Không thể kết nối đến MySQL,
-		kiểm tra lại uername/password đến MySQL.<br>';
-	exit("<pre>${ex}</pre>");
-}
-?>
+use Illuminate\Database\Capsule\Manager;
+
+$manager = new Manager();
+
+$manager->addConnection([
+	'driver'    => 'mysql',
+	'host'      => $_ENV['DB_HOST'],
+	'database'  => $_ENV['DB_NAME'],
+	'username'  => $_ENV['DB_USER'],
+	'password'  => $_ENV['DB_PASS'],
+]);
+
+$manager->setAsGlobal();
+$manager->bootEloquent();
