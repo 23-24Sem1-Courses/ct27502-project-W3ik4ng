@@ -17,17 +17,17 @@ class HomeController extends Controller {
     public function index()
     {
         $this->sendPage('website/index',[
-            'books' => book::All()
+            'books' => book::where('hot', '=' , 1)->get()
         ]);
     }
 
-//     public function create()
-//     {
-//         $this->sendPage('contacts/create', [
-//             'errors' => session_get_once('errors'),
-//             'old' => $this->getSavedFormValues()
-//         ]);
-//     }
+    public function create()
+    {
+        $this->sendPage('contacts/create', [
+            'errors' => session_get_once('errors'),
+            'old' => $this->getSavedFormValues()
+        ]);
+    }
 
     public function store()
     {

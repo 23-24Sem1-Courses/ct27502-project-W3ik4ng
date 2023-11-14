@@ -19,7 +19,7 @@ $router->post('/register', '\\App\Controllers\Auth\RegisterController@store');
 $router->get('/login', '\App\Controllers\Auth\LoginController@create');
 $router->post('/login', '\App\Controllers\Auth\LoginController@store');
 
-// Contact routes
+// Website routes
 $router->get('/', '\App\Controllers\HomeController@index');
 $router->get('/home', '\App\Controllers\HomeController@index');
 
