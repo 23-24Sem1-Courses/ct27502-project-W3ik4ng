@@ -64,11 +64,11 @@ include_once __DIR__ . '/../partials/header.php';
     		</div>
 
     <a href="#demo" class="carousel-control-prev" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon bg-primary" aria-hidden="true"></span>
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
 	<a href="#demo" class="carousel-control-next" role="button" data-slide="next">
-      <span class="carousel-control-next-icon bg-primary" aria-hidden="true"></span>
+      <span class="carousel-control-next-icon " aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
 

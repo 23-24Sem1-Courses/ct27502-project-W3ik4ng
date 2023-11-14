@@ -27,45 +27,29 @@ include_once __DIR__ . '/../partials/header.php';
     
     <?php include_once __DIR__ . '/../partials/navbar.php' ?>
 		
-        
+<div class="row">
+        <div class="col-xl-6 col-sm-6 d-flex justify-content-center " >
+            <img class="img-fluid " width="300" height="200" src="img/sach1.jpg" alt="Sach 1">
+        </div>
+            <div class="col-xl-6 col-sm-6">
+                <div class="position-relative">
+                <h6 class="my-1">Sách 1</h6>
+                <p>tac gia</p>
+                <p>gia</p>
+                <div class="d-flex container">
+                <button class="btn btn-secondary">
+                    <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                </button>
+                <button class="btn btn-danger ml-2">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+ </body>
 
-
-    
-  
-       
-      
-
-       
-
-            
-</body>
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    <?php include_once __DIR__ . '/../partials/footer.php' ?>
+<?php include_once __DIR__ . '/../partials/footer.php' ?>
+ 
     <script>
         $(document).ready(function() {
             $('button[name="delete-contact"]').on('click', function(e) {
@@ -87,5 +71,8 @@ include_once __DIR__ . '/../partials/header.php';
             });
         });
     </script>
+
+
+
 
 

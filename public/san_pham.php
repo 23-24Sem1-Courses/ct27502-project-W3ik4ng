@@ -36,7 +36,7 @@ include_once __DIR__ . '/../partials/header.php';
 
         
 
-        <li class=" float-left" >
+        <li class=" float-left  list-unstyled" >
                 <a class="dropdown-item" href="#">
                     <i class="fas fa-book-open"></i>  
                     Sách mới

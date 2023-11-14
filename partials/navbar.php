@@ -10,7 +10,7 @@
     </a> -->
 
     <a href="#">
-        <img  class="img-fluid" width=100; height=100  src="img/logo.jpg" alt="logo">
+        <img  title="Nhà sách online" class="img-fluid" width=100 height=100    src="img/logo.jpg" alt="logo">
        
 
 	</a>
@@ -52,18 +52,11 @@
 </form>
 
 
-            
-<li class="nav-item dropdown">
-    <a class="nav-link btn btn-gray dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<li class="nav-item">
+    <a class="nav-link btn btn-gray" href="#">
         <i class="fas fa-book"></i> Sản phẩm
-    
     </a>
-    <div class="dropdown-menu dropdown-menu-end dropdown-menu-scrollable" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#">Sách mới</a>
-        <a class="dropdown-item" href="#">Sách bán chạy</a>
-        <a class="dropdown-item" href="#">Sách giảm giá</a>
-    </div>
-</li>   
+</li>
             
            
 <li class="nav-item">
