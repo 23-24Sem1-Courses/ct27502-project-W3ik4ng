@@ -5,6 +5,7 @@
 <?php $this->stop() ?>
 
 <?php $this->start("page") ?>
+
 <body class="container" >
     <hr />
 
