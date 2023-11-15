@@ -64,11 +64,12 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-scrollable" aria-labelledby="navbarDropdown">
                         <a class="nav-link btn btn-gray" display: inline-block; href="/login">
-                            <i class="fas fa-user-plus"></i> Đăng ký
-                        </a>
-                        <a class="nav-link btn btn-gray" display: inline-block; href="/register">
                             <i class="fas fa-sign-in-alt"></i> Đăng nhập
                         </a>
+                        <a class="nav-link btn btn-gray" display: inline-block; href="/register">
+                            <i class="fas fa-user-plus"></i> Đăng ký
+                        </a>
+                       
                     </div>
                 <?php else : ?>
                     <li class="nav-item dropdown">
