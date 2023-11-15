@@ -18,10 +18,10 @@
 </head>
 
 <body>
-    <nav class="nav-primary navbar navbar-expand-md sticky-top navbar-light bg-light">
-    <a href="#">
-        <img class="img-fluid" width="100" height="100" src="https://i.imgur.com/KfPUqlK.jpeg" alt="logo">
-    </a>
+<nav class="nav-primary navbar navbar-expand-md sticky-top navbar-light bg-light">
+        <a href="#">
+            <img class="img-fluid" width="100" height="100" src="https://i.imgur.com/KfPUqlK.jpeg" alt="logo">
+        </a>
     <div class="collapse navbar-collapse" id="app-navbar-collapse">
         <div class="navbar-nav">
             &nbsp;
@@ -73,6 +73,7 @@
                 <?php else : ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                            <i class="fas fa-user"></i> 
                             <?= $this->e(\App\SessionGuard::user()->name) ?> <span class="caret"></span>
                         </a>
 
@@ -93,56 +94,43 @@
     <hr/>
 
     <?= $this->section("page") ?>
-
-    <footer class="footer">
-        <hr/>
-        <div class="row text-center">
-            <div class="col px-0 mt-2 mx-3">
-                <p class="border rounded border-success shadow mb-4">Hỗ trợ khách hàng  </p>
-                <div class="card">
-
-                    <div class="card-body">
-                        <p>
-                            <li class="nav-item d-flex justify-content-center">
-                                <a class="nav-link" href="#">
-                                    <i class="fab fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item d-flex justify-content-center">
-                                <a class="nav-link" href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item d-flex justify-content-center">
-                                <a class="nav-link" href="#">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-
-                            </li>
-                        </p>
-                        <p><a href="">địa chỉ: xyz</a></p>
-                        <p><a href="">039xxxx22</a></p>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col px-0 mt-2 mx-3">
-                <p class="border rounded border-success shadow mb-4">Trợ giúp </p>
-                <div class="card">
-
-                    <div class="card-body">
-                        <p><a href="">Hướng dẫn mua hàng</a></p>
-                        <p><a href="">Phương thực vận chuyển</a></p>
-                        <p><a href="">Chính sách bảo hành</a></p>
-                    </div>
+    <hr/>
+    <footer > 
+    <hr/>
+    <div class="row text-center  ">
+        <div class="col mt-2 mx-3">
+            <h5 class="border rounded border-success shadow mb-4">Hỗ trợ khách hàng</h5>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                    <p>Địa chỉ: XYZ</p>
+                    <p>Điện thoại: 039xxxx22</p>
                 </div>
             </div>
         </div>
-        <hr/>
-        <div class="container text-center">
-            <p class="text-muted">Copyright &copy; 2023 Web Development Course</p>
+        <div class="col px-0 mt-2 mx-3">
+            <h5 class="border rounded border-success shadow mb-4">Trợ giúp</h5>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li><a href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#">Phương thức vận chuyển</a></li>
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+    <hr/>
+    <div class="container text-center">
+        <p class="text-muted">Copyright &copy; 2023 Web Development Course</p>
+    </div>
+</footer>
+
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
