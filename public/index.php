@@ -24,5 +24,7 @@ $router->get('/', '\App\Controllers\HomeController@index');
 $router->get('/home', '\App\Controllers\HomeController@index');
 $router->get('/detail', '\App\Controllers\DetailController@detail');
 $router->get('/product', '\App\Controllers\ProductController@product');
+$router->get('/product/add', '\App\Controllers\ProductController@add');
+$router->post('/product', '\App\Controllers\ProductController@store');
 
 $router->run();
