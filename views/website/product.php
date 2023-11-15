@@ -10,10 +10,12 @@
 <body class="container" >
     <div class="container">
         <li class=" float-left  list-unstyled" >
+            <?php if ($this->e(\App\SessionGuard::user()?->role) == 1) : ?>
                 <a href="/product/add" class="dropdown-item btn btn-primary">
                     <i class="fa fa-plus"></i>
                     Add book
                 </a>
+            <?php endif ?>
                 <a class="dropdown-item" href="#">
                     <i class="fas fa-book-open"></i>  
                     Sách mới

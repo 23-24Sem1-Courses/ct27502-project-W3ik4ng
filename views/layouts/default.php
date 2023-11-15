@@ -19,7 +19,7 @@
 
 <body>
 <nav class="nav-primary navbar navbar-expand-md sticky-top navbar-light bg-light">
-        <a href="#">
+        <a href="/">
             <img class="img-fluid" width="100" height="100" src="https://i.imgur.com/KfPUqlK.jpeg" alt="logo">
         </a>
     <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -40,7 +40,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link btn btn-gray" display: inline-block; href="#">
+                <a class="nav-link btn btn-gray" display: inline-block; href="/product">
                     <i class="fas fa-book"></i> Sản phẩm
                 </a>
             </li>

@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-12">
 
-            <form action="/website" method="POST" class="col-md-6 offset-md-3">
+            <form action="/product" method="POST" class="col-md-6 offset-md-3">
 
                 <!-- Name -->
                 <div class="form-group">
