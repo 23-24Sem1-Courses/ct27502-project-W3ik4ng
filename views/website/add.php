@@ -70,7 +70,7 @@
 
                 <!-- Hot -->
                 <div class="form-group">
-                    <input type="checkbox" name="hot" class="form-control" />
+                    <input type="checkbox" name="hot"  />
                     <label for="hot">Marked as hot</label>
                 </div>
 
