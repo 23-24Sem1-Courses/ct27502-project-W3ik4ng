@@ -42,16 +42,19 @@
                         <p class="m-0"><?= $this->e($book->author) ?></p>
                         <p class="m-0 my-1" ><?= $this->e($book->price) ?></p>
                         <div class="  container-fluid p-0">
-                            <button class="btn btn-success w-100">
+                            <button class="btn btn-primary w-100">
                                 <i class="fas fa-shopping-cart"></i> Giỏ hàng
                             </button>
-                            <button class="btn btn-warning w-100">Mua ngay</button>
+                            <button class="btn btn-danger w-100">
+                                <i class="fas fa-wallet"></i> Mua ngay
+                            </button>
                             <?php if ($this->e(\App\SessionGuard::user()?->role) == 1) : ?>
                                 <a href="<?= '/product/edit/' . $this->e($book->id) ?>" class="btn btn-secondary w-50">
-                                    Edit
+                                    <i class="fas fa-pencil-alt"></i> Edit
+                                    
                                 </a>
                                 <form class="form-inline" action="<?= '/product/delete/' . $this->e($book->id) ?>" method="POST">
-                                    <button type="submit" class="btn btn-danger w-50" name="delete-contact">
+                                    <button type="submit" class="btn btn-warning w-50" name="delete-contact">
                                         <i alt="Delete" class="fa fa-trash"></i> Delete
                                     </button>
                                 </form>
