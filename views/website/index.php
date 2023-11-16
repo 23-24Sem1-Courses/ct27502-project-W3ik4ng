@@ -35,22 +35,22 @@
     <hr/>
     <div id="books" class="row">
         <?php foreach ($books as $book) : ?>
-            <div class="col-lg-3 col-md-4 col-sm-6 align-items-center my-2">
-                <div width="300" height="200">
-                    <img class="img-fluid" src="<?= $this->e($book->image) ?>" alt="Sach 1">
-                </div>
-                <div class="position-relative">
-                <h6><?= $this->e($book->name) ?></h6>
-                <p><?= $this->e($book->author) ?></p>
-                <p><?= $this->e($book->price) ?></p>
-                <div class="d-flex container">
-                <button class="btn btn-secondary">
-                    <i class="fas fa-shopping-cart"></i> Giỏ hàng
-                </button>
-                <button class="btn btn-danger ml-2">Mua ngay</button>
-                </div>
-                </div>
-            </div>
+            <a href="/detail"  class="col-lg-3 col-md-4 col-sm-6 align-items-center my-2">
+                    <div width="300" height="200">
+                        <img class="img-fluid" src="<?= $this->e($book->image) ?>" alt="Sach 1">
+                    </div>
+                    <div class="position-relative">
+                    <h6><?= $this->e($book->name) ?></h6>
+                    <p><?= $this->e($book->author) ?></p>
+                    <p><?= $this->e($book->price) ?></p>
+                    <div class="d-flex container">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                    </button>
+                    <button class="btn btn-danger ml-2">Mua ngay</button>
+                    </div>
+                    </div>
+            </a>
         <?php endforeach ?>
     </div>
     <hr />

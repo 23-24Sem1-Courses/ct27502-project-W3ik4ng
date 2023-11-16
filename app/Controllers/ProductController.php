@@ -17,6 +17,17 @@ class ProductController extends Controller {
         ]);
     }
 
+    public function index()
+    {
+        $this->sendPage('website/index',[
+            'books' => book::where('hot', '=' , 1)->get()
+        ]);
+    }
+
+    public  function detail(){
+        $this->sendPage('website/detail');
+    }
+
     public function add()
     {
         $this->sendPage('website/add', [
