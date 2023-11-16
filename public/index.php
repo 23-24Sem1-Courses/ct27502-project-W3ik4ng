@@ -20,9 +20,9 @@ $router->get('/login', '\App\Controllers\Auth\LoginController@create');
 $router->post('/login', '\App\Controllers\Auth\LoginController@store');
 
 // Website routes
-$router->get('/', '\App\Controllers\HomeController@index');
-$router->get('/home', '\App\Controllers\HomeController@index');
-$router->get('/detail', '\App\Controllers\DetailController@detail');
+$router->get('/', '\App\Controllers\ProductController@index');
+$router->get('/home', '\App\Controllers\ProductController@index');
+$router->get('/detail', '\App\Controllers\ProductController@detail');
 $router->get('/product', '\App\Controllers\ProductController@product');
 $router->get('/product/add', '\App\Controllers\ProductController@add');
 $router->post('/product', '\App\Controllers\ProductController@store');
