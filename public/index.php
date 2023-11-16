@@ -26,5 +26,8 @@ $router->get('/detail', '\App\Controllers\DetailController@detail');
 $router->get('/product', '\App\Controllers\ProductController@product');
 $router->get('/product/add', '\App\Controllers\ProductController@add');
 $router->post('/product', '\App\Controllers\ProductController@store');
+$router->get('/product/edit/(\d+)', '\App\Controllers\ProductController@edit');
+$router->post('/product/(\d+)', '\App\Controllers\ProductController@update');
+$router->post('/product/delete/(\d+)','\App\Controllers\ProductController@destroy');
 
 $router->run();

@@ -83,7 +83,7 @@ CREATE TABLE `books` (
   `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `price` int(15) NOT NULL,
   `notes` varchar(1000) COLLATE utf8_unicode_ci NULL,
-  `hot` boolean NOT NULL DEFAULT 0,
+  `hot` boolean NULL DEFAULT 0,
   `category_id` int(10) unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,

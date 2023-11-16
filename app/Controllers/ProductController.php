@@ -46,12 +46,59 @@ class ProductController extends Controller {
     {
         return [
             'name' => $data['name'] ?? '',
-            'author' => $data['name'] ?? '',
-            'image' => $data['name'] ?? '',
-            'price' => $data['name'] ?? '',
+            'author' => $data['author'] ?? '',
+            'image' => $data['image'] ?? '',
+            'price' => $data['price'] ?? '',
             'notes' => $data['notes'] ?? '',
-            'hot' => $data['notes'] ?? '',
-            'category_id' => $data['notes'] ?? ''
+            'hot' => $data['hot'] ?? '',
+            'category_id' => $data['category_id'] ?? ''
         ];
+    }
+
+    public function edit($bookId)
+    {
+        $book = Book::find($bookId);
+        if (! $book) {
+            $this->sendNotFound();
+        }
+        $form_values = $this->getSavedFormValues();
+        $data = [
+            'errors' => session_get_once('errors'),
+            'categories' => category::All(),
+            'book' => ( !empty($form_values) ) ?
+            array_merge($form_values, ['id' => $book->id]) :
+            $book->toArray()
+
+        ];
+        $this->sendPage('website/edit', $data);
+    }
+
+    public function update($bookId)
+    {
+        $book = Book::find($bookId);
+        if (! $book) {
+            $this->sendNotFound();
+        }
+        $data = $this->filterBookData($_POST);
+        $model_errors = Book::validate($data);
+            if (empty($model_errors)) {
+        }
+        $book->fill($data);
+        $book->save();
+        redirect('/');
+        $this->saveFormValues($_POST);
+        redirect('/product/edit/'.$booktId, [
+            'errors' => $model_errors
+        ]);
+    }
+
+    public function destroy($bookId)
+    {
+        $book = Book::find($bookId);
+        if (! $book) {
+            $this->sendNotFound();
+        }
+        $book->delete();
+        redirect('/product');
     }
 }

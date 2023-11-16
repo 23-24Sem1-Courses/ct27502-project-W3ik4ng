@@ -28,7 +28,7 @@ class Book extends Model
                     $errors['price'] = 'Price is required.';
         }
         if (strlen($data['notes']) > 255) {
-            $errors['notes'] = 'Notes must be at most 255 characters.';
+            $errors['notes'] = 'Notes must be at most 1000 characters.';
         }
         if (! $data['category_id']) {
             $errors['category_id'] = 'Category is required.';

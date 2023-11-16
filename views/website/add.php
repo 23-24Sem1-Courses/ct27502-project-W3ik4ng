@@ -68,10 +68,10 @@
                     <?php endif ?>
                 </div>
 
-                <!-- Price -->
+                <!-- Categories -->
                 <div class="form-group">
                     <label for="category_id">Book Category</label>
-                    <select id="category_id" name="category_id">
+                    <select id="category_id" name="category_id" class="form-control<?= isset($errors['category_id']) ? ' is-invalid' : '' ?>">
                         <option value="">--Pick one--</option>
                         <?php foreach ($categories as $category) : ?>
                             <option value="<?= $this->e($category->id) ?>"><?= $this->e($category->name) ?></option>
@@ -87,7 +87,8 @@
 
                 <!-- Hot -->
                 <div class="form-group">
-                    <input type="checkbox" name="hot" id="hot" value="1" checked="<?= isset($old['hot']) ? $this->e($old['hot']) : '' ?>"/>
+                    <input type="hidden" name="hot" id="hidden" value="0">
+                    <input type="checkbox" name="hot" id="hot" value="1" <?php if(isset($old['hot']) ? $this->e($old['hot']) : '' ) echo("checked") ?>/>
                     <label for="hot">Marked as hot</label>
                 </div>
 
