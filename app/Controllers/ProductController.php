@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use App\SessionGuard as Guard;
 use App\Models\Book;
+use App\Models\Category;
 
 class ProductController extends Controller {
     public function __construct() {
@@ -11,7 +12,8 @@ class ProductController extends Controller {
     }
     public  function product(){
         $this->sendPage('website/product', [
-            'books' => book::All()
+            'books' => book::All(),
+            'categories' => category::All()
         ]);
     }
 
@@ -19,7 +21,8 @@ class ProductController extends Controller {
     {
         $this->sendPage('website/add', [
             'errors' => session_get_once('errors'),
-            'old' => $this->getSavedFormValues()
+            'old' => $this->getSavedFormValues(),
+            'categories' => category::All()
         ]);
     }
 
@@ -30,14 +33,13 @@ class ProductController extends Controller {
         if (empty($model_errors)) {
             $book = new Book();
             $book->fill($data);
-//             $contact->user()->associate(Guard::user());
             $book->save();
             redirect('/');
         }
         // Lưu các giá trị của form vào $_SESSION['form']
         $this->saveFormValues($_POST);
         // Lưu các thông báo lỗi vào $_SESSION['errors']
-        redirect('/website/add', ['errors' => $model_errors]);
+        redirect('/product/add', ['errors' => $model_errors]);
     }
 
     protected function filterBookData(array $data)
@@ -47,7 +49,9 @@ class ProductController extends Controller {
             'author' => $data['name'] ?? '',
             'image' => $data['name'] ?? '',
             'price' => $data['name'] ?? '',
-            'notes' => $data['notes'] ?? ''
+            'notes' => $data['notes'] ?? '',
+            'hot' => $data['notes'] ?? '',
+            'category_id' => $data['notes'] ?? ''
         ];
     }
 }

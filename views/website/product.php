@@ -16,18 +16,11 @@
                     Add book
                 </a>
             <?php endif ?>
+            <?php foreach ($categories as $category) : ?>
                 <a class="dropdown-item" href="#">
-                    <i class="fas fa-book-open"></i>  
-                    Sách mới
+                    <?= $this->e($category->name) ?>
                 </a>
-                <a class="dropdown-item" href="#">
-                    <i class="fas fa-chart-line"></i>  
-                    Sách bán chạy
-                </a>
-                <a class="dropdown-item icon" href="#">
-                    <i class="fas fa-tag"></i>
-                    Sách giảm giá
-                 </a>
+            <?php endforeach ?>
         </li> 
         <div class="row">
             <?php foreach ($books as $book) : ?>

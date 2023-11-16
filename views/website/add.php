@@ -68,9 +68,26 @@
                     <?php endif ?>
                 </div>
 
+                <!-- Price -->
+                <div class="form-group">
+                    <label for="category_id">Book Category</label>
+                    <select id="category_id" name="category_id">
+                        <option value="">--Pick one--</option>
+                        <?php foreach ($categories as $category) : ?>
+                            <option value="<?= $this->e($category->id) ?>"><?= $this->e($category->name) ?></option>
+                        <?php endforeach ?>
+                    </select>
+
+                    <?php if (isset($errors['price'])) : ?>
+                        <span class="invalid-feedback">
+                            <strong><?= $this->e($errors['price']) ?></strong>
+                        </span>
+                    <?php endif ?>
+                </div>
+
                 <!-- Hot -->
                 <div class="form-group">
-                    <input type="checkbox" name="hot"  />
+                    <input type="checkbox" name="hot" id="hot" value="1" checked="<?= isset($old['hot']) ? $this->e($old['hot']) : '' ?>"/>
                     <label for="hot">Marked as hot</label>
                 </div>
 
