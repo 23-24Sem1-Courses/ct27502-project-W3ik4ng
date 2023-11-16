@@ -46,12 +46,12 @@ class ProductController extends Controller {
     {
         return [
             'name' => $data['name'] ?? '',
-            'author' => $data['name'] ?? '',
-            'image' => $data['name'] ?? '',
-            'price' => $data['name'] ?? '',
+            'author' => $data['author'] ?? '',
+            'image' => $data['image'] ?? '',
+            'price' => $data['price'] ?? '',
             'notes' => $data['notes'] ?? '',
-            'hot' => $data['notes'] ?? '',
-            'category_id' => $data['notes'] ?? ''
+            'hot' => $data['hot'] ?? '',
+            'category_id' => $data['category_id'] ?? ''
         ];
     }
 }

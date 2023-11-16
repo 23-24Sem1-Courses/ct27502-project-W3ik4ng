@@ -36,7 +36,7 @@
     <div id="books" class="row">
         <?php foreach ($books as $book) : ?>
             <div class="col-lg-3 col-md-4 col-sm-6 align-items-center my-2">
-                    <img class="img-fluid" width="300" height="200" src="<?= $this->e($book->image) ?>" alt="Sach 1">
+                    <img class=" d-flex justify-content-center" height="200" src="<?= $this->e($book->image) ?>" alt="Sach 1">
                 <div class="position-relative">
                 <h6><?= $this->e($book->name) ?></h6>
                 <p><?= $this->e($book->author) ?></p>
