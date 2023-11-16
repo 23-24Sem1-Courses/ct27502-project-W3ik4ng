@@ -15,7 +15,7 @@
 		
 <div class="row">
         <div class="col-xl-6 col-sm-6 d-flex justify-content-center " >
-            <img class="img-fluid " width="300" height="200" src="img/sach1.jpg" alt="Sach 1">
+            <img class="d-flex container" height="200" src="img/sach1.jpg" alt="Sach 1">
         </div>
             <div class="col-xl-6 col-sm-6">
                 <div class="position-relative">

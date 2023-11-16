@@ -33,7 +33,7 @@
                 <?php foreach ($category->books as $book) : ?>
                     <!-- Books -->
                     <div class="col-lg-3 col-md-4 col-sm-6 align-items-center  p-3 bg-light border border-info rounded ">
-                        <img class="img-fluid" width="300" height="200" src="<?= $this->e($book->image) ?>" alt="Sach <?= $this->e($book->id) ?>">
+                        <img  class="d-flex container" height="200" src="<?= $this->e($book->image) ?>" alt="Sach <?= $this->e($book->id) ?>">
                         <div >
 
                             <h6 class="my-1" ><?= $this->e($book->name) ?></h6>
