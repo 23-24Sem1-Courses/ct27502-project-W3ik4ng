@@ -95,10 +95,10 @@
     <hr/>
 
     <?= $this->section("page") ?>
-    <hr/>
+    
     <footer > 
     <hr/>
-    <div class="row text-center  ">
+    <div class="row text-center  ml-5 mr-5  ">
         <div class="col mt-2 mx-3">
             <h5 class="border rounded border-success shadow mb-4">Hỗ trợ khách hàng</h5>
             <div class="card">

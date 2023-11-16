@@ -22,19 +22,19 @@
                 </a>
             <?php endforeach ?>
         </li> 
-        <div class="row">
+        <div class="row  ">
             <?php foreach ($books as $book) : ?>
-                <div class="col-lg-3 col-md-4 col-sm-6 align-items-center my-2">
+                <div class="col-lg-3 col-md-4 col-sm-6 align-items-center  p-3 bg-light border border-info rounded ">
                     <img class="img-fluid" width="300" height="200" src="<?= $this->e($book->image) ?>" alt="Sach <?= $this->e($book->id) ?>">
-                    <div class="position-relative">
+                    <div >
                         <h6 class="my-1" ><?= $this->e($book->name) ?></h6>
-                        <p><?= $this->e($book->author) ?></p>
-                        <p><?= $this->e($book->price) ?></p>
-                        <div class="d-flex container">
-                            <button class="btn btn-secondary">
+                        <p class="m-0"><?= $this->e($book->author) ?></p>
+                        <p class="m-0 my-1" ><?= $this->e($book->price) ?></p>
+                        <div class="  container-fluid bg-primary p-0">
+                            <button class="btn btn-secondary w-100">
                                 <i class="fas fa-shopping-cart"></i> Giỏ hàng
                             </button>
-                            <button class="btn btn-danger ml-2">Mua ngay</button>
+                            <button class="btn btn-danger w-100">Mua ngay</button>
                         </div>
                     </div>
                 </div>
