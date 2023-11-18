@@ -59,7 +59,7 @@ class ProductController extends Controller {
             $book = new Book();
             $book->fill($data);
             $book->save();
-            redirect('/');
+            redirect('/product');
         }
         // Lưu các giá trị của form vào $_SESSION['form']
         $this->saveFormValues($_POST);
@@ -110,7 +110,7 @@ class ProductController extends Controller {
         }
         $book->fill($data);
         $book->save();
-        redirect('/');
+        redirect('/product');
         $this->saveFormValues($_POST);
         redirect('/product/edit/'.$booktId, [
             'errors' => $model_errors

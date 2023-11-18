@@ -35,4 +35,9 @@ $router->post('/categories', '\App\Controllers\CategoryController@store');
 $router->post('/categories/edit/(\d+)', '\App\Controllers\CategoryController@update');
 $router->post('/categories/delete/(\d+)','\App\Controllers\CategoryController@destroy');
 
+$router->get('/cart', '\App\Controllers\CartController@cart');
+$router->post('/cart/add/(\d+)', '\App\Controllers\CartController@store');
+$router->post('/cart/edit/(\d+)','\App\Controllers\CartController@update');
+$router->post('/cart/delete/(\d+)','\App\Controllers\CartController@destroy');
+
 $router->run();

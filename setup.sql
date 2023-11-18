@@ -107,6 +107,28 @@ INSERT INTO `books` VALUES (2,'Đắc Nhân Tân,Dale Carnegie', 'https://www.re
 /*!40000 ALTER TABLE `books` ENABLE KEYS */;
 UNLOCK TABLES;
 
+DROP TABLE IF EXISTS `cart`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cart` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
+  `book_id` int(10) unsigned NOT NULL,
+  `amount`	int(3) NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `cart_user_id_foreign` (`user_id`),
+  CONSTRAINT `cart_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  KEY `cart_books_id_foreign` (`book_id`),
+  CONSTRAINT `cart_books_id_foreign` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+LOCK TABLES `cart` WRITE;
+/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+INSERT INTO `cart` VALUES (1,'6','1','1','2016-10-09 03:12:25','2016-10-13 08:43:21');
+/*!40000 ALTER TABLE `v` ENABLE KEYS */;
+UNLOCK TABLES;
 
 -- Dump completed on 2016-10-17 13:27:44

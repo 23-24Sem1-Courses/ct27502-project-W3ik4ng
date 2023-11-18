@@ -30,7 +30,7 @@
         <div class="col-md-9">
             <?php foreach ($categories as $category) : ?>
                 <div class="mb-3">
-                    <div class="card-header">
+                    <div id="<?= $this->e($category->name) ?>" class="card-header">
                         <h2><?= $this->e($category->name) ?></h2>
                     </div>
                     <div class="card-body">
@@ -38,16 +38,18 @@
                             <?php foreach ($category->books as $book) : ?>
                                 <div class="col-md-4  align-items-center  p-3 bg-light border border-info rounded ">
                                     <div class="card-body">
-                                        <a class="text-dark" <?= '/detail/' . $this->e($book->id) ?>>
+                                        <a class="text-dark" href="<?= '/detail/' . $this->e($book->id) ?>">
                                             <img  class=" col-sm-10 container d-flex " height="200" src="<?= $this->e($book->image) ?>" alt="Sach <?= $this->e($book->id) ?>">
                                             <h6 class="my-1" ><?= $this->e($book->name) ?></h6>
                                             <p class="m-0"><?= $this->e($book->author) ?></p>
                                             <p class="m-0 my-1" ><?= $this->e($book->price) ?></p>
                                         </a>
                                         <div >
-                                            <button class="btn btn-primary w-100">
-                                                <i class="fas fa-shopping-cart"></i> Giỏ hàng
-                                            </button>
+                                            <form action="<?= '/cart/add/' . $this->e($book['id']) ?>" method="POST">
+                                                <button type="submit" class="btn btn-primary w-100">
+                                                    <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                                                </button>
+                                            </form>
                                             <button class="btn btn-danger w-100">
                                                 <i class="fas fa-wallet "></i> Mua ngay
                                             </button>

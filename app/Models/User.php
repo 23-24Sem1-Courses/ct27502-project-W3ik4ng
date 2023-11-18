@@ -24,7 +24,10 @@ class User extends Model
         } elseif ($data['password'] != $data['password_confirmation']) {
             $errors['password'] = 'Password confirmation does not match.';
         }
-
         return $errors;
+    }
+
+    public function carts() {
+        return $this->hasMany(Cart::class);
     }
 }

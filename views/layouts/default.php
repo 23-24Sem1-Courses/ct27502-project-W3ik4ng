@@ -52,7 +52,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link btn btn-gray" display: inline-block; href="#">
+                    <a class="nav-link btn btn-gray" display: inline-block; href="/cart">
                         <i class="fas fa-shopping-cart"></i> Giỏ hàng
                     </a>
                 </li>
