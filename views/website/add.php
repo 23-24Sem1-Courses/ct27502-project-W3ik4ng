@@ -47,7 +47,7 @@
                 <!-- Price -->
                 <div class="form-group">
                     <label for="price">Book Price</label>
-                    <input type="text" name="price" class="form-control<?= isset($errors['price']) ? ' is-invalid' : '' ?>" maxlen="255" id="price" placeholder="Enter Book Price" value="<?= isset($old['price']) ? $this->e($old['price']) : '' ?>" />
+                    <input type="number" name="price" class="form-control<?= isset($errors['price']) ? ' is-invalid' : '' ?>" maxlen="255" id="price" placeholder="Enter Book Price" value="<?= isset($old['price']) ? $this->e($old['price']) : '' ?>" />
 
                     <?php if (isset($errors['price'])) : ?>
                         <span class="invalid-feedback">

@@ -49,7 +49,7 @@
                 <!-- Price -->
                 <div class="form-group">
                     <label for="price">Book Price</label>
-                    <input type="text" name="price" class="form-control<?= isset($errors['price']) ? ' is-invalid' : '' ?>" maxlen="255" id="price" placeholder="Enter Book Price"  value="<?= $this->e($book['price']) ?>" />
+                    <input type="number" name="price" class="form-control<?= isset($errors['price']) ? ' is-invalid' : '' ?>" maxlen="255" id="price" placeholder="Enter Book Price"  value="<?= $this->e($book['price']) ?>" />
 
                     <?php if (isset($errors['price'])) : ?>
                         <span class="invalid-feedback">
@@ -75,7 +75,7 @@
                     <label for="category_id">Book Category</label>
                     <select id="category_id" name="category_id" class="form-control<?= isset($errors['category_id']) ? ' is-invalid' : '' ?>">
                         <?php foreach ($categories as $category) : ?>
-                            <option value="<?= $this->e($category->id) ?>" <?php if($this->e($book['id']) == $this->e($category->id)) echo("selected") ?>><?= $this->e($category->name) ?></option>
+                            <option value="<?= $this->e($category->id) ?>" <?php if($this->e($book['category_id']) == $this->e($category->id)) echo("selected") ?>><?= $this->e($category->name) ?></option>
                         <?php endforeach ?>
                     </select>
 

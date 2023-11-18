@@ -10,6 +10,7 @@ class ProductController extends Controller {
 
     parent::__construct();
     }
+    
     public  function product(){
         $this->sendPage('website/product', [
             'books' => book::All(),
@@ -24,8 +25,21 @@ class ProductController extends Controller {
         ]);
     }
 
-    public  function detail(){
-        $this->sendPage('website/detail');
+    public  function detail($bookId){
+        $book = Book::find($bookId);
+        if (! $book) {
+            $this->sendNotFound();
+        }
+        $form_values = $this->getSavedFormValues();
+        $data = [
+            'errors' => session_get_once('errors'),
+            'category' => category::find($bookId),
+            'book' => ( !empty($form_values) ) ?
+            array_merge($form_values, ['id' => $book->id]) :
+            $book->toArray()
+
+        ];
+        $this->sendPage('website/detail', $data);
     }
 
     public function add()

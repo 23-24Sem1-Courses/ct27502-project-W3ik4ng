@@ -35,7 +35,8 @@
     <hr/>
     <div id="books" class="row">
         <?php foreach ($books as $book) : ?>
-            <a href="/detail"  class="col-lg-3 col-md-4 col-sm-6 align-items-center my-2">
+            <div class="col-lg-3 col-md-4 col-sm-6 align-items-center my-2">
+                <a href="<?= '/detail/' . $this->e($book->id) ?>" class="text-dark">
                     <div width="300" height="200">
                         <img class="img-fluid" src="<?= $this->e($book->image) ?>" alt="Sach 1">
                     </div>
@@ -43,6 +44,7 @@
                     <h6><?= $this->e($book->name) ?></h6>
                     <p><?= $this->e($book->author) ?></p>
                     <p><?= $this->e($book->price) ?></p>
+                </a>
                     <div class="d-flex container">
                     <button class="btn btn-secondary">
                         <i class="fas fa-shopping-cart"></i> Giỏ hàng
@@ -50,7 +52,7 @@
                     <button class="btn btn-danger ml-2">Mua ngay</button>
                     </div>
                     </div>
-            </a>
+        </div>
         <?php endforeach ?>
     </div>
     <hr />

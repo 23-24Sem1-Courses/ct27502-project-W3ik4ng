@@ -22,12 +22,17 @@ $router->post('/login', '\App\Controllers\Auth\LoginController@store');
 // Website routes
 $router->get('/', '\App\Controllers\ProductController@index');
 $router->get('/home', '\App\Controllers\ProductController@index');
-$router->get('/detail', '\App\Controllers\ProductController@detail');
+$router->get('/detail/(\d+)', '\App\Controllers\ProductController@detail');
 $router->get('/product', '\App\Controllers\ProductController@product');
 $router->get('/product/add', '\App\Controllers\ProductController@add');
 $router->post('/product', '\App\Controllers\ProductController@store');
 $router->get('/product/edit/(\d+)', '\App\Controllers\ProductController@edit');
 $router->post('/product/(\d+)', '\App\Controllers\ProductController@update');
 $router->post('/product/delete/(\d+)','\App\Controllers\ProductController@destroy');
+
+$router->get('/categories', '\App\Controllers\CategoryController@categories');
+$router->post('/categories', '\App\Controllers\CategoryController@store');
+$router->post('/categories/edit/(\d+)', '\App\Controllers\CategoryController@update');
+$router->post('/categories/delete/(\d+)','\App\Controllers\CategoryController@destroy');
 
 $router->run();

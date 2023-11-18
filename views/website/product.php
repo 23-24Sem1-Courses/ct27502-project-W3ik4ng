@@ -5,17 +5,14 @@
 <?php $this->stop() ?>
 
 <?php $this->start("page") ?>
-
-
 <body class="container" >
-    <div class="container">
         <li class=" float-left  list-unstyled" >
             <?php if ($this->e(\App\SessionGuard::user()?->role) == 1) : ?>
                 <a href="/product/add" class="dropdown-item btn btn-primary">
                     <i class="fa fa-plus"></i>
                     Add book
                 </a>
-                <a href="/product/add" class="dropdown-item btn btn-primary">
+                <a href="/categories" class="dropdown-item btn btn-primary">
                     <i class="fa fa-plus"></i>
                     Add catagory
                 </a>
@@ -33,12 +30,13 @@
                 <?php foreach ($category->books as $book) : ?>
                     <!-- Books -->
                     <div class="col-lg-3 col-md-4 col-sm-6 align-items-center  p-3 bg-light border border-info rounded ">
-                        <img class="img-fluid" width="300" height="200" src="<?= $this->e($book->image) ?>" alt="Sach <?= $this->e($book->id) ?>">
-                        <div >
-
+                        <a href="<?= '/detail/' . $this->e($book->id) ?>" class="text-dark">
+                           <img class="img-fluid" width="300" height="200" src="<?= $this->e($book->image) ?>" alt="Sach <?= $this->e($book->id) ?>">
                             <h6 class="my-1" ><?= $this->e($book->name) ?></h6>
                             <p class="m-0"><?= $this->e($book->author) ?></p>
                             <p class="m-0 my-1" ><?= $this->e($book->price) ?></p>
+                        </a>    
+                        <div >
                             <div class="  container-fluid p-0">
                                 <button class="btn btn-success w-100">
                                     <i class="fas fa-shopping-cart"></i> Giỏ hàng
@@ -49,7 +47,7 @@
                                         Edit
                                     </a>
                                     <form class="form-inline" action="<?= '/product/delete/' . $this->e($book->id) ?>" method="POST">
-                                        <button type="submit" class="btn btn-danger w-50" name="delete-contact">
+                                        <button type="submit" class="btn btn-danger w-50" name="delete-book">
                                             <i alt="Delete" class="fa fa-trash"></i> Delete
                                         </button>
                                     </form>
@@ -81,7 +79,6 @@
                 <?php endforeach ?>
             <?php endforeach ?>
         </div>
-	</div>        
 </body>
 	
 <?php $this->stop() ?>
@@ -90,8 +87,8 @@
 <script src="https://cdn.datatables.net/v/bs4/dt-1.13.6/datatables.min.js"></script>
 <script>
     $(document).ready(function(){
-        new DataTable('#contacts');
-        $('button[name="delete-contact"]').on('click', function(e){
+        new DataTable('#books');
+        $('button[name="delete-book"]').on('click', function(e){
             e.preventDefault();
             const form = $(this).closest('form');
             const nameTd = $(this).closest('tr').find('td:first');
