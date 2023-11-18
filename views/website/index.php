@@ -8,7 +8,6 @@
 
 <body class="container" >
     <hr />
-
     <div class="justify-content-center d-flex w-100">
         <div id="demo" class="carousel slide data-ride row">
             <div class="carousel-inner">
@@ -35,7 +34,6 @@
     <hr/>
     <div id="books" class="row">
         <?php foreach ($books as $book) : ?>
-<<<<<<< HEAD
             <div class="col-lg-3 col-md-4 col-sm-6 align-items-center my-2">
                 <a href="<?= '/detail/' . $this->e($book->id) ?>" class="text-dark">
                     <div width="300" height="200">
@@ -54,39 +52,6 @@
                     </div>
                     </div>
         </div>
-=======
-            <a href="/detail"  class="text-dark col-lg-3 col-md-4 col-sm-6 align-items-center my-2 ">
-                <div>
-                    <div class="  align-items-center  p-3 bg-light border border-info rounded ">
-                        <div >
-                                <img  class=" col-sm-10 container d-flex " height="200" src="<?= $this->e($book->image) ?>" alt="Sach <?= $this->e($book->id) ?>">
-                            <div class="card-body">
-                                                <h6 class="my-1" ><?= $this->e($book->name) ?></h6>
-                                                <p class="m-0"><?= $this->e($book->author) ?></p>
-                                                <p class="m-0 my-1" ><?= $this->e($book->price) ?></p>
-                                                <button class="btn btn-primary w-100">
-                                                    <i class="fas fa-shopping-cart"></i> Giỏ hàng
-                                                </button>
-                                                <button class="btn btn-danger w-100">
-                                                    <i class="fas fa-wallet "></i> Mua ngay
-                                                </button>
-                                                <?php if ($this->e(\App\SessionGuard::user()?->role) == 1) : ?>
-                                                <a href="<?= '/product/edit/' . $this->e($book->id) ?>" class="btn btn-secondary w-100">
-                                                    <i class="fas fa-pencil-alt"></i> Edit
-                                                </a>
-                                                <form class="form-inline" action="<?= '/product/delete/' . $this->e($book->id) ?>" method="POST">
-                                                    <button type="submit" class="btn btn-warning w-100" name="delete-contact">
-                                                        <i alt="Delete" class="fa fa-trash"></i> Delete
-                                                    </button>
-                                                </form>
-                                            <?php endif ?>
-                             </div>
-                        </div>
-                                
-                    </div>
-                </div>
-            </a>
->>>>>>> origin/PHONG
         <?php endforeach ?>
     </div>
     <hr />
