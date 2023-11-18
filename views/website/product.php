@@ -5,70 +5,72 @@
 <?php $this->stop() ?>
 
 <?php $this->start("page") ?>
-<body class="container">
-    <div class="row">
-        <div class="mb-3">
-            <li class="d-flex  flex-column">
-                <?php if ($this->e(\App\SessionGuard::user()?->role) == 1) : ?>
-                <a href="/product/add" class="dropdown-item btn btn-primary ">
-                    <i class="fa fa-plus"></i> Thêm sách
-                </a>
-                <a href="/categories" class="dropdown-item btn btn-primary ">
-                    <i class="fa fa-plus"></i> Thêm thể loại
-                </a>
-                <?php endif ?>
+<body >
+    <div class="container">
+        <div class="row">
+            <div class="mb-3">
+                <li class="d-flex  flex-column">
+                    <?php if ($this->e(\App\SessionGuard::user()?->role) == 1) : ?>
+                    <a href="/product/add" class="dropdown-item btn btn-primary ">
+                        <i class="fa fa-plus"></i> Thêm sách
+                    </a>
+                    <a href="/categories" class="dropdown-item btn btn-primary ">
+                        <i class="fa fa-plus"></i> Thêm thể loại
+                    </a>
+                    <?php endif ?>
 
-                <ul class="list-unstyled">
-                    <?php foreach ($categories as $category) : ?>
-                        <a class="dropdown-item" href="#<?= $this->e($category->name) ?>">
-                        <?= $this->e($category->name) ?>
-                        </a>
-                    <?php endforeach ?>
-                </ul>
-            </li>
-        </div>
-        <div class="col-md-9">
-            <?php foreach ($categories as $category) : ?>
-                <div class="mb-3">
-                    <div class="card-header">
-                        <h2><?= $this->e($category->name) ?></h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <?php foreach ($category->books as $book) : ?>
-                                <div class="col-md-4  align-items-center  p-3 bg-light border border-info rounded ">
-                                    <div class="card-body">
-                                        <a class="text-dark" <?= '/detail/' . $this->e($book->id) ?>>
-                                            <img  class=" col-sm-10 container d-flex " height="200" src="<?= $this->e($book->image) ?>" alt="Sach <?= $this->e($book->id) ?>">
-                                            <h6 class="my-1" ><?= $this->e($book->name) ?></h6>
-                                            <p class="m-0"><?= $this->e($book->author) ?></p>
-                                            <p class="m-0 my-1" ><?= $this->e($book->price) ?></p>
+                    <ul class="list-unstyled">
+                        <?php foreach ($categories as $category) : ?>
+                            <a class="dropdown-item" href="#<?= $this->e($category->name) ?>">
+                            <?= $this->e($category->name) ?>
+                            </a>
+                        <?php endforeach ?>
+                    </ul>
+                </li>
+            </div>
+            <div class="col-md-9">
+                <?php foreach ($categories as $category) : ?>
+                    <div class="mb-3">
+                        <div class="card-header">
+                            <h2><?= $this->e($category->name) ?></h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <?php foreach ($category->books as $book) : ?>
+                                    <div class="col-md-4  align-items-center  p-3 bg-light border border-info rounded">
+                                        <div class="card-body">
+                                        <a href="<?= '/detail/' . $this->e($book->id) ?>" class="text-dark">
+                                            <img class=" col-sm-10 container d-flex " height="200"  src="<?= $this->e($book->image) ?>" alt="Sach 1">                                      
+                                                <h6 class="my-1" ><?= $this->e($book->name) ?></h6>
+                                                <p class="m-0"><?= $this->e($book->author) ?></p>
+                                                <p class="m-0 my-1" ><?= $this->e($book->price) ?></p>
                                         </a>
-                                        <div >
-                                            <button class="btn btn-primary w-100">
-                                                <i class="fas fa-shopping-cart"></i> Giỏ hàng
-                                            </button>
-                                            <button class="btn btn-danger w-100">
-                                                <i class="fas fa-wallet "></i> Mua ngay
-                                            </button>
-                                            <?php if ($this->e(\App\SessionGuard::user()?->role) == 1) : ?>
-                                                <a href="<?= '/product/edit/' . $this->e($book->id) ?>" class="btn btn-secondary w-100">
-                                                    <i class="fas fa-pencil-alt"></i> Edit
-                                                </a>
-                                                <form class="form-inline" action="<?= '/product/delete/' . $this->e($book->id) ?>" method="POST">
-                                                    <button type="submit" class="btn btn-warning w-100" name="delete-contact">
-                                                        <i alt="Delete" class="fa fa-trash"></i> Delete
-                                                    </button>
-                                                </form>
-                                            <?php endif ?>
+                                            <div >
+                                                <button class="btn btn-secondary w-100">
+                                                    <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                                                </button>
+                                                <button class="btn btn-danger w-100">
+                                                    <i class="fas fa-wallet "></i> Mua ngay
+                                                </button>
+                                                <?php if ($this->e(\App\SessionGuard::user()?->role) == 1) : ?>
+                                                    <a href="<?= '/product/edit/' . $this->e($book->id) ?>" class="border border-warning btn btn-light btn  text-danger  w-100">
+                                                        <i class="fas fa-pencil-alt"></i> Edit
+                                                    </a>
+                                                    <form class="form-inline" action="<?= '/product/delete/' . $this->e($book->id) ?>" method="POST">
+                                                        <button type="submit" class="border border-warning btn btn-light text-danger w-100" name="delete-contact">
+                                                            <i alt="Delete" class="fa fa-trash"></i> Delete
+                                                        </button>
+                                                    </form>
+                                                <?php endif ?>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            <?php endforeach ?>
+                                <?php endforeach ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <?php endforeach ?>
+                <?php endforeach ?>
+            </div>
         </div>
     </div>
 </body>

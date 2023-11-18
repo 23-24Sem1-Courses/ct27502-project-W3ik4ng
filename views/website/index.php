@@ -6,7 +6,7 @@
 
 <?php $this->start("page") ?>
 
-<body class="container" >
+<body >
     <hr />
     <div class="justify-content-center d-flex w-100">
         <div id="demo" class="carousel slide data-ride row">
@@ -32,28 +32,44 @@
         </div>
     </div>
     <hr/>
-    <div id="books" class="row">
-        <?php foreach ($books as $book) : ?>
-            <div class="col-lg-3 col-md-4 col-sm-6 align-items-center my-2">
-                <a href="<?= '/detail/' . $this->e($book->id) ?>" class="text-dark">
-                    <div width="300" height="200">
-                        <img class="img-fluid" src="<?= $this->e($book->image) ?>" alt="Sach 1">
+
+    <div class="container"> 
+        <div class="conatainer">
+            <div class="col-md-9 ml-3  ">
+            <div class="card-header">
+                            <h2>HOT</h2>
+                        </div>
+                <div class="card-body">
+                    <div id="books" class="row">
+                        <?php foreach ($books as $book) : ?>
+                            <div class=" col-md-4  align-items-center p-3 bg-light border border-info rounded my-3 ">
+                                <a href="<?= '/detail/' . $this->e($book->id) ?>" class="text-dark">
+                                    <img class=" col-sm-10 container d-flex " height="200"  src="<?= $this->e($book->image) ?>" alt="Sach 1">                                      
+                                    <h6 class="my-1" ><?= $this->e($book->name) ?></h6>
+                                    <p class="m-0"><?= $this->e($book->author) ?></p>
+                                    <p class="m-0 my-1" ><?= $this->e($book->price) ?></p>
+                                </a>
+                                <div class="card-body">
+                                    <button class="btn btn-secondary w-100">
+                                        <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                                    </button>
+                                    <button class="btn btn-danger w-100">
+                                        <i class="fas fa-wallet "></i> Mua ngay
+                                    </button>
+                                </div>
+                            </div>
+                        <?php endforeach ?>
                     </div>
-                    <div class="position-relative">
-                    <h6><?= $this->e($book->name) ?></h6>
-                    <p><?= $this->e($book->author) ?></p>
-                    <p><?= $this->e($book->price) ?></p>
-                </a>
-                    <div class="d-flex container">
-                    <button class="btn btn-secondary">
-                        <i class="fas fa-shopping-cart"></i> Giỏ hàng
-                    </button>
-                    <button class="btn btn-danger ml-2">Mua ngay</button>
-                    </div>
-                    </div>
+
+                </div>
+            </div>
         </div>
-        <?php endforeach ?>
     </div>
+
+
+
+
+    
     <hr />
 </body>
 
