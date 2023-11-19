@@ -34,11 +34,11 @@
     <hr/>
 
     <div class="container"> 
-        <div class="conatainer">
+        <div class=" d-flex justify-content-center">
             <div class="col-md-9 ml-3  ">
-            <div class="card-header">
-                            <h2>HOT</h2>
-                        </div>
+                <div class="card-header">
+                     <h2 class="text-danger"> <i class="fas fa-fire"></i>  HOT</h2>                       
+                 </div>
                 <div class="card-body">
                     <div id="books" class="row">
                         <?php foreach ($books as $book) : ?>
@@ -49,18 +49,17 @@
                                     <p class="m-0"><?= $this->e($book->author) ?></p>
                                     <p class="m-0 my-1" ><?= $this->e($book->price) ?></p>
                                 </a>
-                                <div class="card-body">
+                                <div>                                  
                                     <button class="btn btn-secondary w-100">
                                         <i class="fas fa-shopping-cart"></i> Giỏ hàng
                                     </button>
                                     <button class="btn btn-danger w-100">
                                         <i class="fas fa-wallet "></i> Mua ngay
-                                    </button>
+                                    </button>                                  
                                 </div>
                             </div>
                         <?php endforeach ?>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -9,10 +9,6 @@ class Book extends Model
     protected $table = 'books';
     protected $fillable = ['name', 'author', 'image', 'price', 'notes', 'hot', 'category_id'];
 
-    public function user() {
-    return $this->belongsTo(Category::class);
-    }
-
     public static function validate(array $data) {
         $errors = [];
         if (! $data['name']) {
@@ -32,7 +28,15 @@ class Book extends Model
         }
         if (! $data['category_id']) {
             $errors['category_id'] = 'Category is required.';
-}
+        }
         return $errors;
+    }
+    
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function cart() {
+        return $this->belongsToMany(Cart::class);
     }
 }
