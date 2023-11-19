@@ -28,7 +28,7 @@
                                 <div>
                                     <p><?= $books->find($this->e($cart->book_id))->name ?></p>
                                     <p><?= $books->find($this->e($cart->book_id))->author ?></p>
-                                    <?php $sum = 0?>
+                                    <?php $sum = '0' ?>
                                     <p><?= $books->find($this->e($cart->book_id))->price ?></p>
                                     <?php $sum = $sum + $books->find($this->e($cart->book_id))->price?>
                                 </div>
