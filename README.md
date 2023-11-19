@@ -1,28 +1,16 @@
-## Triển khai trên Apache HTTP
+# Project học phần Công nghệ Web (CT275)
 
-```
-# C:/xampp/apache/conf/extra/httpd-vhosts.conf
+Học kỳ 1, Năm học 2023-2024
 
-<VirtualHost *:80>	
-	DocumentRoot "C:/xampp/htdocs" 
-	ServerName localhost
-</VirtualHost>
+**MSSV 1** : B2014749
 
-<VirtualHost *:80>	
-	DocumentRoot "D:/Projects/mysites/phonebook/public" 
-	ServerName phonebook.localhost
-	
-	# Set access permission 
-	<Directory "D:/Projects/mysites/phonebook/public"> 
-		Options Indexes FollowSymLinks Includes ExecCGI
-		AllowOverride All
-		Require all granted
+**Họ tên SV 1**: Nguyễn Đức Duy Khang
 
-		RewriteEngine On
-		RewriteCond %{REQUEST_FILENAME} !-f
-		RewriteCond %{REQUEST_FILENAME} !-d
-		RewriteRule . index.php [L]
-	</Directory>
-</VirtualHost>
-```
+**MSSV 2**: B2014773
+
+**Họ tên SV 2**: Nguyễn Hoàng Cao Phong
+
+**Lớp học phần**: CT27502
+
+**Tên dự án**: Web bán sách online
 
