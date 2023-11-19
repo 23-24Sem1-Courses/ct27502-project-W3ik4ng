@@ -33,7 +33,7 @@ class ProductController extends Controller {
         $form_values = $this->getSavedFormValues();
         $data = [
             'errors' => session_get_once('errors'),
-            'category' => category::find($bookId),
+            'category' => category::find($book->category_id),
             'book' => ( !empty($form_values) ) ?
             array_merge($form_values, ['id' => $book->id]) :
             $book->toArray()

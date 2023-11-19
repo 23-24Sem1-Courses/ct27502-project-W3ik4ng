@@ -70,7 +70,7 @@
 
                 <!-- Categories -->
                 <div class="form-group">
-                    <label for="category_id">Book Category</label>
+                    <label for="category_id">Book Genre</label>
                     <select id="category_id" name="category_id" class="form-control<?= isset($errors['category_id']) ? ' is-invalid' : '' ?>">
                         <option value="">--Pick one--</option>
                         <?php foreach ($categories as $category) : ?>

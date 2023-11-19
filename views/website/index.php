@@ -48,12 +48,14 @@
                                     <p class="m-0"><?= $this->e($book->author) ?></p>
                                     <p class="m-0 my-1" ><?= $this->e($book->price) ?></p>
                                 </a>
-                                <div>                                  
-                                    <button class="btn btn-secondary w-100">
-                                        <i class="fas fa-shopping-cart"></i> Giỏ hàng
-                                    </button>
+                                <div>                  
+                                    <form action="<?= '/cart/add/' . $this->e($book['id']) ?>" method="POST">                
+                                        <button class="btn btn-secondary w-100">
+                                            <i class="fas fa-shopping-cart"></i> Add to cart
+                                        </button>
+                                    </form>
                                     <button class="btn btn-danger w-100">
-                                        <i class="fas fa-wallet "></i> Mua ngay
+                                        <i class="fas fa-wallet "></i> Buy now
                                     </button>                                  
                                 </div>
                             </div>

@@ -72,7 +72,7 @@
 
                 <!-- Categories -->
                 <div class="form-group">
-                    <label for="category_id">Book Category</label>
+                    <label for="category_id">Book Genre</label>
                     <select id="category_id" name="category_id" class="form-control<?= isset($errors['category_id']) ? ' is-invalid' : '' ?>">
                         <?php foreach ($categories as $category) : ?>
                             <option value="<?= $this->e($category->id) ?>" <?php if($this->e($book['category_id']) == $this->e($category->id)) echo("selected") ?>><?= $this->e($category->name) ?></option>
