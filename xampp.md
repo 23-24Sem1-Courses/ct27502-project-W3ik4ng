@@ -1,7 +1,4 @@
-## Triển khai trên Apache HTTP
 
-```
-# C:/xampp/apache/conf/extra/httpd-vhosts.conf
 
 <VirtualHost *:80>	
 	DocumentRoot "C:/xampp/htdocs" 
@@ -9,11 +6,11 @@
 </VirtualHost>
 
 <VirtualHost *:80>	
-	DocumentRoot "D:/Projects/mysites/phonebook/public" 
-	ServerName phonebook.localhost
+	DocumentRoot "D:/1. MON HOC/CONG NGHE WEB/phong/thuchanh/code/ct27502-project/public"
+	ServerName ct275-project.localhost
 	
 	# Set access permission 
-	<Directory "D:/Projects/mysites/phonebook/public"> 
+	<Directory "D:/1. MON HOC/CONG NGHE WEB/phong/thuchanh/code/ct27502-project/public"> 
 		Options Indexes FollowSymLinks Includes ExecCGI
 		AllowOverride All
 		Require all granted
@@ -24,5 +21,3 @@
 		RewriteRule . index.php [L]
 	</Directory>
 </VirtualHost>
-```
-
