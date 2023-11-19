@@ -5,18 +5,19 @@
 <?php $this->stop() ?>
 
 <?php $this->start("page") ?>
-<body class="container">
-    <div class="row">
-        <div class="mb-3">
-            <li class="d-flex  flex-column">
-                <?php if ($this->e(\App\SessionGuard::user()?->role) == 1) : ?>
-                <a href="/product/add" class="dropdown-item btn btn-primary ">
-                    <i class="fa fa-plus"></i> Thêm sách
-                </a>
-                <a href="/categories" class="dropdown-item btn btn-primary ">
-                    <i class="fa fa-plus"></i> Thêm thể loại
-                </a>
-                <?php endif ?>
+<body >
+    <div class="container">
+        <div class="row">
+            <div class="mb-3">
+                <li class="d-flex  flex-column">
+                    <?php if ($this->e(\App\SessionGuard::user()?->role) == 1) : ?>
+                    <a href="/product/add" class="dropdown-item btn btn-primary ">
+                        <i class="fa fa-plus"></i> Thêm sách
+                    </a>
+                    <a href="/categories" class="dropdown-item btn btn-primary ">
+                        <i class="fa fa-plus"></i> Thêm thể loại
+                    </a>
+                    <?php endif ?>
 
                 <ul class="list-unstyled">
                     <?php foreach ($categories as $category) : ?>
@@ -46,7 +47,7 @@
                                         </a>
                                         <div >
                                             <form action="<?= '/cart/add/' . $this->e($book['id']) ?>" method="POST">
-                                                <button type="submit" class="btn btn-primary w-100">
+                                                <button type="submit" class="btn btn-secondary w-100">
                                                     <i class="fas fa-shopping-cart"></i> Giỏ hàng
                                                 </button>
                                             </form>
@@ -54,11 +55,11 @@
                                                 <i class="fas fa-wallet "></i> Mua ngay
                                             </button>
                                             <?php if ($this->e(\App\SessionGuard::user()?->role) == 1) : ?>
-                                                <a href="<?= '/product/edit/' . $this->e($book->id) ?>" class="btn btn-secondary w-100">
+                                                <a href="<?= '/product/edit/' . $this->e($book->id) ?>" class="btn border border-warning text-danger w-100">
                                                     <i class="fas fa-pencil-alt"></i> Edit
                                                 </a>
                                                 <form class="form-inline" action="<?= '/product/delete/' . $this->e($book->id) ?>" method="POST">
-                                                    <button type="submit" class="btn btn-warning w-100" name="delete-contact">
+                                                    <button type="submit" class="btn border border-warning text-danger w-100" name="delete-contact">
                                                         <i alt="Delete" class="fa fa-trash"></i> Delete
                                                     </button>
                                                 </form>

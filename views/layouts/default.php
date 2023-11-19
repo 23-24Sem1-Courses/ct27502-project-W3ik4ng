@@ -97,16 +97,19 @@
 
     <footer > 
     <hr/>
-    <div class="row text-center  ml-5 mr-5  ">
-        <div class="col mt-2 mx-3">
+    <div class="row text-center  ml-5 mr-5   ">
+        <div class="col mt-2 mx-3 ">
             <h5 class="border rounded border-success shadow mb-4">Hỗ trợ khách hàng</h5>
-            <div class="card">
-                <div class="card-body">
-                    <ul class="list-unstyled">
-                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <div class="card bg-light">
+                <div class="card-body  ">
+                    <ul class="list-unstyled   " >
+                        <li><a class=" btn btn-gray"  href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a class=" btn btn-gray" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a class=" btn btn-gray" href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
                     </ul>
+
+                    
+
                     <p>Địa chỉ: XYZ</p>
                     <p>Điện thoại: 039xxxx22</p>
                 </div>
@@ -116,10 +119,10 @@
             <h5 class="border rounded border-success shadow mb-4">Trợ giúp</h5>
             <div class="card">
                 <div class="card-body">
-                    <ul class="list-unstyled">
-                        <li><a href="#">Hướng dẫn mua hàng</a></li>
-                        <li><a href="#">Phương thức vận chuyển</a></li>
-                        <li><a href="#">Chính sách bảo hành</a></li>
+                    <ul class="list-unstyled ">
+                        <li><a class="btn btn-gray" href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a class="btn btn-gray" href="#">Phương thức vận chuyển</a></li>
+                        <li><a class="btn btn-gray" href="#">Chính sách bảo hành</a></li>
                     </ul>
                 </div>
             </div>

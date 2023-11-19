@@ -28,9 +28,7 @@
                                 <div>
                                     <p><?= $books->find($this->e($cart->book_id))->name ?></p>
                                     <p><?= $books->find($this->e($cart->book_id))->author ?></p>
-                                    <?php $sum = '0' ?>
                                     <p><?= $books->find($this->e($cart->book_id))->price ?></p>
-                                    <?php $sum = $sum + $books->find($this->e($cart->book_id))->price?>
                                 </div>
                             </td>
                             <td class="col-2">
@@ -79,42 +77,6 @@
                         </tr>
                     <?php endforeach ?>
                 </tbody>
-                <tfoot>
-                        <th colspan="3">
-                            Total: <?= $sum?>
-                        </th>
-                        <th>
-                            <!-- <form class=" form-inline" action="<?= '/cart/delete' ?>" method="POST"> -->
-                                <button class="btn btn-xs btn-success" name="checkout-cart">
-                                    Checkout
-                                </button>
-                            <!-- </form> -->
-                            <div id="checkout-confirm" class="modal fade" tabindex="-1">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Checkout</h4>
-                                            <button type="button" class="close" data-dismiss="modal">
-                                                <span>&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Do you want to checkout?</p>
-                                            <p>Total: <?= $sum?></p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button"
-                                                data-dismiss="modal"
-                                                class="btn btn-success" id="checkout" name="checkout">Checkout</button>
-                                            <button type="button"
-                                                data-dismiss="modal"
-                                                class="btn btn-default">Cancel</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </th>
-                </tfoot>
             </table>
             <!-- Table Ends Here -->
         </div>
@@ -135,21 +97,6 @@
                 keyboard: false
             })
             .one('click', '#delete', function() {
-                form.trigger('submit');
-            });
-        });
-    });
-    $(document).ready(function(){
-        $('button[name="checkout-cart"]').on('click', function(e){
-            e.preventDefault();
-            const form = $(this).closest('form');
-            const nameTd = $(this).closest('tr').find('td:first');
-            $('#checkout-confirm')
-            .modal({
-                backdrop: 'static',
-                keyboard: false
-            })
-            .one('click', '#checkout', function() {
                 form.trigger('submit');
             });
         });
