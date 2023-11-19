@@ -103,8 +103,18 @@ LOCK TABLES `books` WRITE;
 /*!40000 ALTER TABLE `books` DISABLE KEYS */;
 INSERT INTO `books` VALUES (1,'The Da Vinci Code','Dan Brown','https://bizweb.dktcdn.net/100/378/470/products/the-da-vinci-code-robert-langdon-paperback-march-31-2009-us.jpg?v=1607750115053','200000','While in Paris, Harvard symbologist Robert Langdon is awakened by a phone call in the dead of the night. The elderly curator of the Louvre has been murdered inside the museum, his body covered in baffling symbols. As Langdon and gifted French cryptologist Sophie Neveu sort through the bizarre riddles, they are stunned to discover a trail of clues hidden in the works of Leonardo da Vinci—clues visible for all to see and yet ingeniously disguised by the painter.
 Even more startling, the late curator was involved in the Priory of Sion—a secret society whose members included Sir Isaac Newton, Victor Hugo, and Da Vinci—and he guarded a breathtaking historical secret. Unless Langdon and Neveu can decipher the labyrinthine puzzle—while avoiding the faceless adversary who shadows their every move—the explosive, ancient truth will be lost forever.',0, 1,'2016-10-09 03:12:25','2016-10-13 08:43:21');
-INSERT INTO `books` VALUES (2,'Đắc Nhân Tân,Dale Carnegie', 'https://www.reader.com.vn/uploads/images/2019/10/30/19/dac-nhan-tam_600x865.png','300000', ' The book How to Win Friends and Influence People deals with the basic principles of communication and dealing between people. The book helps readers understand how to create better feelings, using the trust and love of others.',0,1,'2016-10-09 03:17:25', '2016-12-09 03:12:25');
-/*!40000 ALTER TABLE `books` ENABLE KEYS */;
+INSERT INTO `books` VALUES (2,'The Big Sleep', 'Raymond Chandler ', 'https://m.media-amazon.com/images/I/61FfXqRj9OL._SY522_.jpg', 	'311563', ' The Big Sleep is no ordinary story: private eye Philip Marlowe gets hired to investigate the blackmailing of Carmen Sternwood, the second daughter of a wealthy general', 1, 3, '2019-08-09 08:08:34', '2019-08-10 10:08:34');
+INSERT INTO `books` (name, author, image, price, notes, hot,category_id ) 
+ VALUES ('The Big Sleep', 'Raymond Chandler', 'https://m.media-amazon.com/images/I/71TRHm+Gf0L._SY522_.jpg',' 433616', 'Los Angeles PI Philip Marlowe is working for the Sternwood family. Old man Sternwood, crippled and wheelchair-bound, is being given the squeeze by a blackmailer and he wants Marlowe to make the problem go away. But with Sternwoods two wild, devil-may-care daughters prowling LAs seedy backstreets, Marlowes got his work cut out - and thats before he stumbles over the first corpse... ', 1, 3);
+INSERT INTO `books` (name, author, image, price, notes, hot,category_id ) 
+ VALUES  
+( 'The Girl with the Dragon Tattoo', 'Stieg Larsson', 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1684638853i/2429135.jpg', '169000',' Harriet Vanger, a scion of one of Sweden’s wealthiest families disappeared over forty years ago. All these years later, her aged uncle continues to seek the truth. He hires Mikael Blomkvist, a crusading journalist recently trapped by a libel conviction, to investigate. He is aided by the pierced and tattooed punk prodigy Lisbeth Salander. Together they tap into a vein of unfathomable iniquity and astonishing corruption.', 1, 1),
+( 'A Haunting on the Hill', 'Elizabeth Hand', 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1675879522i/102188677.jpg', '363000', 'From three-time Shirley Jackson, World Fantasy, and Nebula Award-winning author Elizabeth Hand comes the first-ever authorized novel to return to the world of Shirley Jacksons  The Haunting of Hill House:  a suspenseful, contemporary, and terrifying story of longing and isolation all its own.', 1, 1 ),
+( 'What the River Knows', 'Isabel Ibañez', 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1674234543i/65213381.jpg', '290000', 'Bolivian-Argentinian Inez Olivera belongs to the glittering upper society of nineteenth century Buenos Aires, and like the rest of the world, the town is steeped in old world magic that’s been largely left behind or forgotten. Inez has everything a girl might want, except for the one thing she yearns the most: her globetrotting parents—who frequently leave her behind.',1,3),
+('A Traitor in Whitehall', 'Julia Kelly', 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1687140970i/65214072.jpg' , 363000, 'From Julia Kelly, internationally bestselling author of The Last Dance of the Debutante, comes the first in the mysterious and immersive Parisian Orphan series, A Traitor in Whitehall.', 0, 3),
+( 'A Curse for True Love', 'Stephanie Garber', 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1674501506i/62816044.jpg', '291000', 'Evangeline Fox ventured to the Magnificent North in search of her happy ending, and it seems as if she has it. She’s married to a handsome prince and lives in a legendary castle. But Evangeline has no idea of the devastating price she’s paid for this fairytale. She doesn’t know what she has lost, and her husband is determined to make sure she never finds out . . . but first he must kill Jacks, the Prince of Hearts.', 1, 2),
+('Starling House', 'Alix E. Harrow', 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1682447293i/65213595.jpg', 363000, 'A grim and gothic new tale from author Alix E. Harrow about a small town haunted by secrets that can not stay buried and the sinister house that sits at the crossroads of it all.', 0, 2);
+
 UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cart`;
@@ -128,7 +138,9 @@ CREATE TABLE `cart` (
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
 INSERT INTO `cart` VALUES (1,'6','1','1','2016-10-09 03:12:25','2016-10-13 08:43:21');
+booksbooksbooksbooksbooksbooks
 /*!40000 ALTER TABLE `v` ENABLE KEYS */;
-UNLOCK TABLES;
+UNLOCKbooks TABLES;
 
 -- Dump completed on 2016-10-17 13:27:44
+booksbooksbooks
