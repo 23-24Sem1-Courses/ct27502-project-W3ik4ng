@@ -41,7 +41,7 @@
                                     <div class="card-body">
                                         <a class="text-dark" href="<?= '/detail/' . $this->e($book->id) ?>">
                                             <img  class=" col-sm-10 container d-flex " height="200" src="<?= $this->e($book->image) ?>" alt="Sach <?= $this->e($book->id) ?>">
-                                            <h6 class="my-1" ><?= $this->e($book->name) ?></h6>
+                                            <h6 class="my-3"  style="height: 25px"><?= $this->e($book->name) ?></h6>
                                             <p class="m-0"><?= $this->e($book->author) ?></p>
                                             <p class="m-0 my-1" ><?= $this->e($book->price) ?></p>
                                         </a>
