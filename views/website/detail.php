@@ -20,16 +20,16 @@
                 <div class="col-xl-6 col-sm-6">
                     <div class="position-relative">
                     <h6 class="my-1"><?= $this->e($book['name']) ?></h6>
-                    <p> Author: <?= $this->e($book['author']) ?></p>
+                    <p>Author: <?= $this->e($book['author']) ?></p>
                     <p>Price: <?= $this->e($book['price']) ?></p>
-                    <p>Category: <?php if($this->e($book['id']) == $this->e($category['id'])) echo($this->e($category['name'])) ?></p>
+                    <p>Genre: <?php if($this->e($book['category_id']) == $this->e($category['id'])) echo($this->e($category['name'])) ?></p>
                     <p>Description:</p>
                     <p><?= $this->e($book['notes']) ?></p>
                     <div class="d-flex container">
                     <button class="btn btn-secondary">
-                        <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                        <i class="fas fa-shopping-cart"></i> Add to cart
                     </button>
-                    <button class="btn btn-danger ml-2">Mua ngay</button>
+                    <button class="btn btn-danger ml-2">Buy now</button>
                     </div>
                 </div>
             </div>

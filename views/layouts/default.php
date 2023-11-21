@@ -30,7 +30,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="query" placeholder="Tìm kiếm...">
+                    <input type="text" class="form-control" name="query" placeholder="Search...">
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="submit">
                             OK
@@ -41,33 +41,27 @@
 
                 <li class="nav-item">
                     <a class="nav-link btn btn-gray" display: inline-block; href="/product">
-                        <i class="fas fa-book"></i> Sản phẩm
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link btn btn-gray" display: inline-block; href="#">
-                        <i class="fas fa-money-bill-alt"></i> Thanh toán
+                        <i class="fas fa-book"></i> Products
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link btn btn-gray" display: inline-block; href="/cart">
-                        <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                        <i class="fas fa-shopping-cart"></i> Your cart
                     </a>
                 </li>
 
                 <li class="nav-item dropdown">
                     <?php if (!\App\SessionGuard::isUserLoggedIn()) : ?>
                         <a class="nav-link btn btn-gray dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user"></i> Tài khoản
+                            <i class="fas fa-user"></i> Account
                         </a>
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-scrollable" aria-labelledby="navbarDropdown">
                             <a class="nav-link btn btn-gray" display: inline-block; href="/login">
-                                <i class="fas fa-sign-in-alt"></i> Đăng nhập
+                                <i class="fas fa-sign-in-alt"></i> Login
                             </a>
                             <a class="nav-link btn btn-gray" display: inline-block; href="/register">
-                                <i class="fas fa-user-plus"></i> Đăng ký
+                                <i class="fas fa-user-plus"></i> Register
                             </a>
                         
                         </div>
@@ -99,7 +93,7 @@
     <hr/>
     <div class="row text-center  ml-5 mr-5   ">
         <div class="col mt-2 mx-3 ">
-            <h5 class="border rounded border-success shadow mb-4">Hỗ trợ khách hàng</h5>
+            <h5 class="border rounded border-success shadow mb-4">Customer support:</h5>
             <div class="card bg-light">
                 <div class="card-body  ">
                     <ul class="list-unstyled   " >
@@ -110,19 +104,19 @@
 
                     
 
-                    <p>Địa chỉ: XYZ</p>
-                    <p>Điện thoại: 039xxxx22</p>
+                    <p>Address: XYZ</p>
+                    <p>Contact us: 039xxxx22</p>
                 </div>
             </div>
         </div>
         <div class="col px-0 mt-2 mx-3">
-            <h5 class="border rounded border-success shadow mb-4">Trợ giúp</h5>
+            <h5 class="border rounded border-success shadow mb-4">Need help?</h5>
             <div class="card">
                 <div class="card-body">
                     <ul class="list-unstyled ">
-                        <li><a class="btn btn-gray" href="#">Hướng dẫn mua hàng</a></li>
-                        <li><a class="btn btn-gray" href="#">Phương thức vận chuyển</a></li>
-                        <li><a class="btn btn-gray" href="#">Chính sách bảo hành</a></li>
+                        <li><a class="btn btn-gray" href="#">Shopping manual</a></li>
+                        <li><a class="btn btn-gray" href="#">Product delivery</a></li>
+                        <li><a class="btn btn-gray" href="#">Our warranty policy</a></li>
                     </ul>
                 </div>
             </div>

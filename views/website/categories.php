@@ -75,11 +75,11 @@
                         <th colspan="3" >
                             <form action="/categories" method="POST">
                                 <div class="form-group">
-                                    <label for="name">New category:</label>
+                                    <label for="name">New Genre:</label>
                                     <div class="d-flex">
-                                        <input type="text" name="name" class="col-9 mr-1 form-control<?= isset($errors['name']) ? ' is-invalid' : '' ?>" maxlen="255" id="name" placeholder="Enter Category Name" value="<?= isset($old['name']) ? $this->e($old['name']) : '' ?>" />
+                                        <input type="text" name="name" class="col-9 mr-1 form-control<?= isset($errors['name']) ? ' is-invalid' : '' ?>" maxlen="255" id="name" placeholder="Enter Genre Name" value="<?= isset($old['name']) ? $this->e($old['name']) : '' ?>" />
                                         <button type="submit" name="submit" id="submit" class="btn btn-primary col-3">
-                                        <i class="fa fa-plus"></i> Add Category</button>
+                                        <i class="fa fa-plus"></i> Add Genre</button>
                                     </div>
                                     
                                     <?php if (isset($errors['name'])) : ?>

@@ -1,7 +1,6 @@
 <?php $this->layout("layouts/default", ["title" => APPNAME]) ?>
 
 <?php $this->start("page_specific_css") ?>
-<link href="https://cdn.datatables.net/v/bs4/dt-1.13.6/datatables.min.css" rel="stylesheet">
 <?php $this->stop() ?>
 
 <?php $this->start("page") ?>
@@ -49,12 +48,14 @@
                                     <p class="m-0"><?= $this->e($book->author) ?></p>
                                     <p class="m-0 my-1" ><?= $this->e($book->price) ?></p>
                                 </a>
-                                <div>                                  
-                                    <button class="btn btn-secondary w-100">
-                                        <i class="fas fa-shopping-cart"></i> Giỏ hàng
-                                    </button>
+                                <div>                  
+                                    <form action="<?= '/cart/add/' . $this->e($book['id']) ?>" method="POST">                
+                                        <button class="btn btn-secondary w-100">
+                                            <i class="fas fa-shopping-cart"></i> Add to cart
+                                        </button>
+                                    </form>
                                     <button class="btn btn-danger w-100">
-                                        <i class="fas fa-wallet "></i> Mua ngay
+                                        <i class="fas fa-wallet "></i> Buy now
                                     </button>                                  
                                 </div>
                             </div>
@@ -72,13 +73,4 @@
     <hr />
 </body>
 
-<?php $this->stop() ?>
-
-<?php $this->start("page_specific_js") ?>
-<script src="https://cdn.datatables.net/v/bs4/dt-1.13.6/datatables.min.js"></script>
-<script>
-//     $(document).ready(function() {
-//         new DataTable('#contacts');
-//     });
-</script>
 <?php $this->stop() ?>
